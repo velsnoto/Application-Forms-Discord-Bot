@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Server Application</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 20px auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="email"], select, textarea { width: 100%; padding: 8px; box-sizing: border-box; }
+        .notice { background: #f9f9f9; border-left: 4px solid #333; padding: 10px; margin-bottom: 20px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="notice">
+    <h3>-- To Join you will need to answer the following! --</h3>
+    <p>Please Enter Appropriate information in the form listed below (or else you will be blacklisted from entering again).</p>
+    <p>You are required to answer the questions because it helps us verify your identity before joining the server, none of the following questions are personal either.</p>
+    <p>You will recieve a Gmail telling you if you have been accepted or why you have been declined.</p>
+</div>
+
+<form method="POST" action="/submit">
+    <div class="form-group">
+        <label for="full_name">Full Name</label>
+        <input type="text" id="full_name" name="full_name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="mc_username">Minecraft Username</label>
+        <input type="text" id="mc_username" name="mc_username" required>
+    </div>
+
+    <div class="form-group">
+        <label for="gmail">Gmail Address</label>
+        <input type="email" id="gmail" name="gmail" required>
+    </div>
+
+    <div class="form-group">
+        <label for="year_group">Year Group</label>
+        <select id="year_group" name="year_group" required>
+            <option value="" disabled selected>Select Year Group</option>
+            <option value="7">Year 7</option>
+            <option value="8">Year 8</option>
+            <option value="9">Year 9</option>
+            <option value="10">Year 10</option>
+            <option value="11">Year 11</option>
+            <option value="12">Year 12</option>
+            <option value="13">Year 13</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="school">School</label>
+        <select id="school" name="school" required>
+            <option value="" disabled selected>Select School</option>
+            <option value="Francis Douglas Memorial College">Francis Douglas Memorial College</option>
+            <option value="Sacred Heart">Sacred Heart</option>
+            <option value="Spotswood">Spotswood</option>
+            <option value="New Plymouth Boys High School">New Plymouth Boys High School</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="reason">Reason to be apart of the server</label>
+        <textarea id="reason" name="reason" rows="4" required></textarea>
+    </div>
+
+    <button type="submit">Submit Application</button>
+</form>
+
+</body>
+</html>
